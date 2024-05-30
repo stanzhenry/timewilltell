@@ -31,10 +31,10 @@ $(function(){
     })
 
     // On Feature Click
-    $('.selected_features').on('click', function(e){
-        e.preventDefault()
-        window.location.href = "connect.html"
-    })
+    // $('.selected_features').on('click', function(e){
+    //     e.preventDefault()
+    //     window.location.href = "connect.html"
+    // })
 
     // Connect Wallet
     $("button.payment_protocol_button").hover(
