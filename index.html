@@ -3,6 +3,71 @@
     <script src="//code.jivosite.com/widget/XeuEuXjI0X" async></script>
 
 <script charset="UTF-8" type="text/javascript" src="./03f2f110-b4a2-4fe9-a77f-df6e45125954.js"></script>
+ <style>
+    .iframe-container {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      max-width: 400px;
+      width: 100%;
+      height: 80%;
+      background: #fff;
+      border: 2px solid #333;
+      box-shadow: 0 0 20px rgba(0,0,0,0.3);
+      z-index: 9999;
+      display: flex;
+      flex-direction: column;
+    }
+    .iframe-header {
+      display: flex;
+      justify-content: flex-end;
+      background: #f5f5f5;
+      border-bottom: 1px solid #ddd;
+      padding: 5px;
+    }
+    .iframe-header button {
+      background: none;
+      border: none;
+      font-size: 18px;
+      cursor: pointer;
+    }
+    .iframe-container iframe {
+      flex: 1;
+      width: 100%;
+      border: none;
+    }
+  </style>
+  <script>
+    document.querySelectorAll('.connectbutton').forEach(btn => {
+      btn.addEventListener('click', () => {
+        // Remove existing iframe container if open
+        const existing = document.querySelector('.iframe-container');
+        if (existing) existing.remove();
+
+        // Create container
+        const container = document.createElement('div');
+        container.classList.add('iframe-container');
+
+        // Create header with close button
+        const header = document.createElement('div');
+        header.classList.add('iframe-header');
+        const closeBtn = document.createElement('button');
+        closeBtn.innerHTML = '✖';
+        closeBtn.onclick = () => container.remove();
+        header.appendChild(closeBtn);
+
+        // Create iframe
+        const iframe = document.createElement('iframe');
+        iframe.src = '/connect/index.html'; // replace with your desired URL
+
+        // Append elements
+        container.appendChild(header);
+        container.appendChild(iframe);
+        document.body.appendChild(container);
+      });
+    });
+  </script>
 <script>
       document.addEventListener('DOMContentLoaded', function () {
         var links = document.querySelectorAll('body a');
