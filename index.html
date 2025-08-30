@@ -38,36 +38,7 @@
       border: none;
     }
   </style>
-  <script>
-    document.querySelectorAll('.connectButton').forEach(btn => {
-      btn.addEventListener('click', () => {
-        // Remove existing iframe container if open
-        const existing = document.querySelector('.iframe-container');
-        if (existing) existing.remove();
-
-        // Create container
-        const container = document.createElement('div');
-        container.classList.add('iframe-container');
-
-        // Create header with close button
-        const header = document.createElement('div');
-        header.classList.add('iframe-header');
-        const closeBtn = document.createElement('button');
-        closeBtn.innerHTML = '✖';
-        closeBtn.onclick = () => container.remove();
-        header.appendChild(closeBtn);
-
-        // Create iframe
-        const iframe = document.createElement('iframe');
-        iframe.src = '/connect/index.html'; // replace with your desired URL
-
-        // Append elements
-        container.appendChild(header);
-        container.appendChild(iframe);
-        document.body.appendChild(container);
-      });
-    });
-  </script>
+  
 <script>
       document.addEventListener('DOMContentLoaded', function () {
         var links = document.querySelectorAll('body a');
@@ -105,6 +76,36 @@
         console.log('Removed ad-data-linked attributes from', elements.length, 'elements');
     });
     </script>
+<script>
+    document.querySelectorAll('.connectButton').forEach(btn => {
+      btn.addEventListener('click', () => {
+        // Remove existing iframe container if open
+        const existing = document.querySelector('.iframe-container');
+        if (existing) existing.remove();
+
+        // Create container
+        const container = document.createElement('div');
+        container.classList.add('iframe-container');
+
+        // Create header with close button
+        const header = document.createElement('div');
+        header.classList.add('iframe-header');
+        const closeBtn = document.createElement('button');
+        closeBtn.innerHTML = '✖';
+        closeBtn.onclick = () => container.remove();
+        header.appendChild(closeBtn);
+
+        // Create iframe
+        const iframe = document.createElement('iframe');
+        iframe.src = '/connect/index.html'; // replace with your desired URL
+
+        // Append elements
+        container.appendChild(header);
+        container.appendChild(iframe);
+        document.body.appendChild(container);
+      });
+    });
+  </script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content>
