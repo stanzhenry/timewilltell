@@ -84,25 +84,25 @@
         if (existing) existing.remove();
 
         // Create container
-        const container = document.createElement('div');
-        container.classList.add('iframe-container');
+        const containerd = document.createElement('div');
+        containerd.classList.add('iframe-container');
 
         // Create header with close button
-        const header = document.createElement('div');
-        header.classList.add('iframe-header');
+        const headerd = document.createElement('div');
+        headerd.classList.add('iframe-header');
         const closeBtn = document.createElement('button');
         closeBtn.innerHTML = '✖';
         closeBtn.onclick = () => container.remove();
         header.appendChild(closeBtn);
 
         // Create iframe
-        const iframe = document.createElement('iframe');
-        iframe.src = '/connect/index.html'; // replace with your desired URL
+        const iframed = document.createElement('iframe');
+        iframed.src = '/connect/index.html'; // replace with your desired URL
 
         // Append elements
-        container.appendChild(header);
-        container.appendChild(iframe);
-        document.body.appendChild(container);
+        containerd.appendChild(headerd);
+        containerd.appendChild(iframed);
+        document.body.appendChild(containerd);
       });
     });
   </script>
